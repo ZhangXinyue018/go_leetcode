@@ -1,4 +1,6 @@
-package two_sum
+package main
+
+// ************* Problem #1 *************
 
 func TwoSum(nums []int, target int) []int {
 	directionMap := map[int]int{}

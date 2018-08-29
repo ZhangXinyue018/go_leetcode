@@ -1,5 +1,7 @@
 package main
 
+// ************* Problem #3 *************
+
 import "fmt"
 
 func lengthOfLongestSubstring(s string) int {
