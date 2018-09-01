@@ -16,8 +16,8 @@ func isPalindrome(x int) bool {
 }
 
 func main() () {
-	//fmt.Println(isPalindrome(-123))
-	//fmt.Println(isPalindrome(123))
-	//fmt.Println(isPalindrome(121))
+	fmt.Println(isPalindrome(-123))
+	fmt.Println(isPalindrome(123))
+	fmt.Println(isPalindrome(121))
 	fmt.Println(isPalindrome(10))
 }
