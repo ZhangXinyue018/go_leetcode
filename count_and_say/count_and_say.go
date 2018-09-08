@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+	"strconv"
+)
 
 func countAndSay(n int) string {
 	if n == 1 {
@@ -14,21 +18,23 @@ func countAndSay(n int) string {
 }
 
 func returnValue(value string) string {
-	resultString := ""
-	lastChar := value[0]
-	lastCount := 1
+	var sb strings.Builder
+	lastChar, lastCount := value[0], 1
 	strLen := len(value)
 	for i := 1; i < strLen; i++ {
 		char := value[i]
 		if char == lastChar {
 			lastCount ++
 		} else {
-			resultString = resultString + string('0'+lastCount) + string(lastChar)
+			sb.WriteString(strconv.Itoa(lastCount))
+			sb.WriteByte(byte(lastChar))
 			lastChar = char
 			lastCount = 1
 		}
 	}
-	return resultString + string('0'+lastCount) + string(lastChar)
+	sb.WriteString(strconv.Itoa(lastCount))
+	sb.WriteByte(byte(lastChar))
+	return sb.String()
 }
 
 func main() {
