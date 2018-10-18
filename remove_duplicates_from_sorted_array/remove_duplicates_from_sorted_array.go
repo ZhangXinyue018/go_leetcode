@@ -1,8 +1,6 @@
-package main
+package remove_duplicates_from_sorted_array
 
-import "fmt"
-
-func removeDuplicates(nums []int) int {
+func RemoveDuplicates(nums []int) int {
 	if len(nums) == 0 {
 		return 0
 	}
@@ -16,9 +14,3 @@ func removeDuplicates(nums []int) int {
 	return i
 }
 
-func main() {
-	fmt.Println(removeDuplicates([]int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}))
-	fmt.Println(removeDuplicates([]int{}))
-	fmt.Println(removeDuplicates([]int{1, 1, 2}))
-	fmt.Println(removeDuplicates([]int{1}))
-}

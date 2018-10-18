@@ -1,8 +1,7 @@
-package main
+package longest_common_prefix
 
 import (
-	"fmt"
-	"strings"
+		"strings"
 )
 
 func longestCommonPrefix(strs []string) string {
@@ -49,11 +48,3 @@ func longestCommonPrefix2(strs []string) string {
 	return prefix
 }
 
-
-func main() () {
-	fmt.Println(longestCommonPrefix2([]string{"flower", "flow", "flight"}))
-	fmt.Println(longestCommonPrefix2([]string{"dog", "racecar", "car"}))
-	fmt.Println(longestCommonPrefix2([]string{}))
-	fmt.Println(longestCommonPrefix2([]string{"aca", "cba"}))
-	fmt.Println(longestCommonPrefix2([]string{"aa", "ab"}))
-}

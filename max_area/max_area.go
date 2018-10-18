@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package max_area
 
 func maxArea(height []int) int {
 	maxArea := 0
@@ -39,9 +37,4 @@ func maxAreaBetter(height []int) int {
 		}
 	}
 	return maxArea
-}
-
-func main() {
-	fmt.Println(maxAreaBetter([]int{1, 8, 6, 2, 5, 4, 8, 3, 7}))
-	fmt.Println(maxAreaBetter([]int{1, 2}))
 }

@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package panlindrome_number
 
 func isPalindrome(x int) bool {
 	if x < 0 || (x > 0 && x%10 == 0) {
@@ -13,11 +11,4 @@ func isPalindrome(x int) bool {
 		input = input / 10
 	}
 	return input == result || input == result/10
-}
-
-func main() () {
-	fmt.Println(isPalindrome(-123))
-	fmt.Println(isPalindrome(123))
-	fmt.Println(isPalindrome(121))
-	fmt.Println(isPalindrome(10))
 }

@@ -1,7 +1,6 @@
-package main
+package string_to_integer
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -10,7 +9,7 @@ const (
 	StageValue = 2
 )
 
-func myAtoi(str string) int {
+func MyAtoi(str string) int {
 	stage := StageSign
 	sign := 1
 	var resultInt int64 = 0
@@ -49,13 +48,4 @@ func myAtoi(str string) int {
 	} else {
 		return int(tempResult)
 	}
-}
-
-func main() {
-	fmt.Println(myAtoi("42"))
-	fmt.Println(myAtoi("   -42"))
-	fmt.Println(myAtoi("4193 with words"))
-	fmt.Println(myAtoi("words and 4321"))
-	fmt.Println(myAtoi("-91283472332"))
-	fmt.Println(myAtoi("9223372036854775808"))
 }

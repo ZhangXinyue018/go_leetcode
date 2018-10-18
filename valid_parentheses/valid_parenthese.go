@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package valid_parentheses
 
 var (
 	Matcher = map[int32]int32{
@@ -10,7 +8,7 @@ var (
 	}
 )
 
-func isValid(s string) bool {
+func IsValid(s string) bool {
 	queue := []int32{}
 	for _, char := range s {
 		if result, hasRecord := Matcher[char]; hasRecord {
@@ -26,11 +24,3 @@ func isValid(s string) bool {
 	return len(queue) == 0
 }
 
-func main() {
-	fmt.Println(isValid("()"))
-	fmt.Println(isValid("()[]{}"))
-	fmt.Println(isValid("(]"))
-	fmt.Println(isValid("([)]"))
-	fmt.Println(isValid("{[]}"))
-	fmt.Println(isValid("]"))
-}

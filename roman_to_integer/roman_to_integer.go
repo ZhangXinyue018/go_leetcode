@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package roman_to_integer
 
 var SymbolMap = map[uint8]int{
 	'I': 1,
@@ -12,7 +10,7 @@ var SymbolMap = map[uint8]int{
 	'M': 1000,
 }
 
-func romanToInt(s string) int {
+func RomanToInt(s string) int {
 	length := len(s)
 	result := SymbolMap[s[length-1]]
 	for i := length - 2; i >= 0; i-- {
@@ -23,12 +21,4 @@ func romanToInt(s string) int {
 		}
 	}
 	return result
-}
-
-func main() () {
-	fmt.Println(romanToInt("III"))
-	fmt.Println(romanToInt("IV"))
-	fmt.Println(romanToInt("IX"))
-	fmt.Println(romanToInt("LVIII"))
-	fmt.Println(romanToInt("MCMXCIV"))
 }

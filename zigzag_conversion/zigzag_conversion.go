@@ -1,11 +1,10 @@
-package main
+package zigzag_conversion
 
 import (
-	"fmt"
 	"strings"
 )
 
-func convert(s string, numRows int) string {
+func Convert(s string, numRows int) string {
 	resultMap := map[int][]string{}
 	returnPoint := numRows - 1
 	countInGroup := returnPoint << 1
@@ -33,7 +32,7 @@ func convert(s string, numRows int) string {
 	return resultString
 }
 
-func convertBetter(s string, numRows int) string {
+func ConvertBetter(s string, numRows int) string {
 	var sb strings.Builder
 	if numRows == 1 {
 		return s
@@ -56,13 +55,4 @@ func convertBetter(s string, numRows int) string {
 		}
 	}
 	return sb.String()
-}
-
-func main() {
-	fmt.Println(convertBetter("PAYPALISHIRING", 3))
-	fmt.Println(convertBetter("PAYPALISHIRING", 3) == "PAHNAPLSIIGYIR")
-	fmt.Println(convertBetter("PAYPALISHIRING", 4))
-	fmt.Println(convertBetter("PAYPALISHIRING", 4) == "PINALSIGYAHRPI")
-	fmt.Println(convertBetter("AB", 1))
-	fmt.Println(convertBetter("AB", 1) == "AB")
 }

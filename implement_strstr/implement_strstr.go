@@ -2,8 +2,7 @@ package main
 
 import (
 	"strings"
-	"fmt"
-)
+	)
 
 func strStr(haystack string, needle string) int {
 	return strings.Index(haystack, needle)
@@ -24,9 +23,3 @@ func strStr2(haystack string, needle string) int {
 	return -1
 }
 
-func main() {
-	fmt.Println(strStr2("a", "a"))
-	fmt.Println(strStr2("abaahaystacka", ""))
-	fmt.Println(strStr2("abaaa", "nb"))
-	fmt.Println(strStr2("jlalalalal", "al"))
-}

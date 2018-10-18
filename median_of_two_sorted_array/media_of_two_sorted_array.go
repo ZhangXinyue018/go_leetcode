@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package median_of_two_sorted_array
 
 // ************* Problem #4 *************
 
@@ -33,10 +31,4 @@ func FindMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	} else {
 		return float64(result[totalLength/2])
 	}
-}
-
-func main() () {
-	num1 := []int{1, 2, 3}
-	num2 := []int{5, 6}
-	fmt.Println(FindMedianSortedArrays(num1, num2))
 }

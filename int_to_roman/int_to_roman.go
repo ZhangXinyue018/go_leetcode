@@ -1,9 +1,8 @@
-package main
+package int_to_roman
 
 import (
 	"strings"
-	"fmt"
-)
+	)
 
 var intList = []int{1000, 500, 100, 50, 10, 5, 1}
 var romanList = []uint32{'M', 'D', 'C', 'L', 'X', 'V', 'I'}
@@ -33,13 +32,4 @@ func intToRoman(num int) string {
 		num = num - 1
 	}
 	return sb.String()
-}
-
-func main() {
-	fmt.Println(intToRoman(8))    //VIII
-	fmt.Println(intToRoman(3))    //III
-	fmt.Println(intToRoman(4))    //IV
-	fmt.Println(intToRoman(9))    //IX
-	fmt.Println(intToRoman(58))   //LVIII
-	fmt.Println(intToRoman(1994)) //MCMXCIV
 }

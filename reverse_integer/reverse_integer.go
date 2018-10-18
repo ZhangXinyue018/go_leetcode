@@ -1,11 +1,10 @@
-package main
+package reverse_integer
 
 import (
-		"math"
-	"fmt"
+	"math"
 )
 
-func reverse(x int) int {
+func Reverse(x int) int {
 	var input int64
 	var result int64 = 0
 	if x > 0 {
@@ -28,7 +27,7 @@ func reverse(x int) int {
 	return int(result)
 }
 
-func reverse2(x int) int {
+func Reverse2(x int) int {
 	var result int64 = 0
 	var input = int64(x)
 	for input != 0 {
@@ -39,11 +38,4 @@ func reverse2(x int) int {
 		return 0
 	}
 	return int(result)
-}
-
-func main() () {
-	fmt.Println(reverse2(123))
-	fmt.Println(reverse2(120))
-	fmt.Println(reverse2(-123))
-	fmt.Println(reverse2(1534236469))
 }

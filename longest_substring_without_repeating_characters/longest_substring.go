@@ -1,8 +1,6 @@
-package main
+package longest_substring_without_repeating_characters
 
 // ************* Problem #3 *************
-
-import "fmt"
 
 func lengthOfLongestSubstring(s string) int {
 	lastRepeat := -1
@@ -18,12 +16,4 @@ func lengthOfLongestSubstring(s string) int {
 		}
 	}
 	return longestLen
-}
-
-func main() () {
-	fmt.Println(lengthOfLongestSubstring("a"))
-	fmt.Println(lengthOfLongestSubstring("bbbb"))
-	fmt.Println(lengthOfLongestSubstring("pwwkew"))
-	fmt.Println(lengthOfLongestSubstring("ababab"))
-	fmt.Println(lengthOfLongestSubstring("abba"))
 }

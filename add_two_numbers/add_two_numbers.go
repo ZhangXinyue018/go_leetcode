@@ -1,4 +1,4 @@
-package main
+package add_two_numbers
 
 // ************* Problem #2 *************
 
@@ -9,11 +9,13 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func (node *ListNode) print() () {
+func (node *ListNode) Result() (string) {
+	resultStr := ""
 	for node != nil {
-		fmt.Print(node.Val)
+		resultStr = fmt.Sprintf("%s%d", resultStr, node.Val)
 		node = node.Next
 	}
+	return resultStr
 }
 
 func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
@@ -39,14 +41,4 @@ func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	return headNode.Next
 }
 
-func main() () {
-	node11 := &ListNode{Val: 2, Next: &ListNode{Val: 4, Next: &ListNode{Val: 3,}}}
-	node12 := &ListNode{Val: 5, Next: &ListNode{Val: 6, Next: &ListNode{Val: 4,}}}
-	node1 := AddTwoNumbers(node11, node12)
-	node1.print()
-	fmt.Println()
-	node21 := &ListNode{Val: 2, Next: &ListNode{Val: 4, Next: &ListNode{Val: 9,}}}
-	node22 := &ListNode{Val: 5, Next: &ListNode{Val: 6, Next: &ListNode{Val: 4, Next: &ListNode{Val: 1}}}}
-	node2 := AddTwoNumbers(node21, node22)
-	node2.print()
-}
+

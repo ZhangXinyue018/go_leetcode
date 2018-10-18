@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package longest_palindrome
 
 func longestPalindrome(s string) string {
 	strLen := len(s)
@@ -15,7 +13,6 @@ func longestPalindrome(s string) string {
 			}
 			k++
 		}
-
 		for j > 0 && k < strLen-1 {
 			if s[j-1] != s[k+1] {
 				break
@@ -30,10 +27,4 @@ func longestPalindrome(s string) string {
 		}
 	}
 	return longestStr
-}
-
-func main() {
-	fmt.Println(longestPalindrome(""))
-	fmt.Println(longestPalindrome("babad"))
-	fmt.Println(longestPalindrome("cbbd"))
 }
