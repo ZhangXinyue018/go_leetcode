@@ -1,6 +1,8 @@
 package search_insert_position
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestSearchInsert(t *testing.T) {
 	type args struct {
@@ -12,10 +14,10 @@ func TestSearchInsert(t *testing.T) {
 		args args
 		want int
 	}{
-		{"test 1", args{[]int{1,3,5,6}, 5}, 2},
-		{"test 1", args{[]int{1,3,5,6}, 2}, 1},
-		{"test 1", args{[]int{1,3,5,6}, 7}, 4},
-		{"test 1", args{[]int{1,3,5,6}, 0}, 0},
+		{"test 1", args{[]int{1, 3, 5, 6}, 5}, 2},
+		{"test 1", args{[]int{1, 3, 5, 6}, 2}, 1},
+		{"test 1", args{[]int{1, 3, 5, 6}, 7}, 4},
+		{"test 1", args{[]int{1, 3, 5, 6}, 0}, 0},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

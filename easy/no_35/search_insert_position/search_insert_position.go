@@ -19,3 +19,4 @@ func search(nums []int, target int, fromIndex int, toIndex int) int {
 		}
 	}
 }
+
