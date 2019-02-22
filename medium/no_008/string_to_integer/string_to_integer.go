@@ -34,7 +34,7 @@ func MyAtoi(str string) int {
 				break
 			} else {
 				resultInt = resultInt*10 + int64(char-'0')
-				if resultInt > math.MaxInt32{
+				if resultInt > math.MaxInt32 {
 					break
 				}
 			}
@@ -49,3 +49,45 @@ func MyAtoi(str string) int {
 		return int(tempResult)
 	}
 }
+
+func myAtoi(str string) int {
+	sign := 0
+	var result int64 = 0
+
+	for _, char := range str {
+		if sign == 0 {
+			if char == '+' {
+				sign = 1
+			} else if char == '-' {
+				sign = -1
+			} else if char != ' ' {
+				temp := char - '0'
+				if temp < 0 || temp > 9 {
+					return 0
+				}
+				sign = 1
+				result = int64(temp)
+			}
+		} else {
+			temp := char - '0'
+			if temp < 0 || temp > 9 {
+				break
+			}
+			result = result*int64(10) + int64(temp)
+			if result > math.MaxInt32{
+				break
+			}
+		}
+	}
+
+	result = result * int64(sign)
+	if result > math.MaxInt32{
+		return math.MaxInt32
+	}else if result < math.MinInt32{
+		return math.MinInt32
+	}else{
+		return int(result)
+	}
+
+}
+

@@ -56,3 +56,25 @@ func ConvertBetter(s string, numRows int) string {
 	}
 	return sb.String()
 }
+
+func ConvertTest(s string, numRows int) string {
+	if numRows == 1 {
+		return s
+	}
+	var sb strings.Builder
+	flipNumber := 2*numRows - 2
+	for i := 0; i < numRows; i++ {
+		if i != 0 && i != numRows-1 {
+			swing := 2 * i
+			for j := i; j < len(s); j = j + swing {
+				sb.WriteString(string(s[j]))
+				swing = flipNumber - swing
+			}
+		} else {
+			for j := i; j < len(s); j = j + flipNumber {
+				sb.WriteString(string(s[j]))
+			}
+		}
+	}
+	return sb.String()
+}

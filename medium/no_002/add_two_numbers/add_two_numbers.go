@@ -19,26 +19,24 @@ func (node *ListNode) Result() (string) {
 }
 
 func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+	resultHead := &ListNode{}
+	temp := resultHead
 	cin := 0
-	var headNode = &ListNode{Val: 0, Next: nil,}
-	currNode := headNode
 	for l1 != nil || l2 != nil || cin != 0 {
-		var a, b int
 		if l1 != nil {
-			a = l1.Val
+			cin = cin + l1.Val
 			l1 = l1.Next
 		}
 		if l2 != nil {
-			b = l2.Val
+			cin = cin + l2.Val
 			l2 = l2.Next
 		}
-		result := a + b + cin
-		newNode := &ListNode{Val: result % 10, Next: nil}
-		currNode.Next = newNode
-		currNode = newNode
-		cin = result / 10
+		temp.Next = &ListNode{
+			Val:  cin % 10,
+			Next: nil,
+		}
+		temp = temp.Next
+		cin = cin / 10
 	}
-	return headNode.Next
+	return resultHead.Next
 }
-
-

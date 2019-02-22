@@ -17,3 +17,22 @@ func lengthOfLongestSubstring(s string) int {
 	}
 	return longestLen
 }
+
+func lengthOfLongestSubstring2(s string) int {
+	countIndex := -1
+	maxLength := 0
+	markingMap := make(map[uint8]int)
+	for i := 0; i < len(s); i++ {
+		if index, ok := markingMap[s[i]]; ok {
+			if index > countIndex {
+				countIndex = index
+			}
+		}
+		markingMap[s[i]] = i
+		tempLength := i - countIndex
+		if tempLength > maxLength {
+			maxLength = tempLength
+		}
+	}
+	return maxLength
+}
