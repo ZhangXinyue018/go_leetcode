@@ -1,6 +1,6 @@
 package datastructure
 
-//最大堆
+// 最大堆
 
 type BinaryHeap struct {
 	Items []int
