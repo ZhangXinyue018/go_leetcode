@@ -16,6 +16,7 @@ func TestQuickSort(t *testing.T) {
 	}{
 		{"test1", args{[]int{4, 2, 3, 1}}, []int{1, 2, 3, 4}},
 		{"test2", args{[]int{3, 1, 4, 2}}, []int{1, 2, 3, 4}},
+		{"test3", args{[]int{2, 8, 7, 1, 3, 5, 6, 4}}, []int{1, 2, 3, 4, 5, 6, 7, 8}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
