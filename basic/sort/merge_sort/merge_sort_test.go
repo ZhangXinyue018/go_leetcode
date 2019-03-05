@@ -1,7 +1,7 @@
 package merge_sort
 
 import (
-	"reflect"
+	"go_leetcode/basic/commons"
 	"testing"
 )
 
@@ -18,7 +18,7 @@ func TestMergeSort(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := MergeSort(tt.args.nums); !reflect.DeepEqual(got, tt.want) {
+			if got := MergeSort(tt.args.nums); !commons.CheckArrayEqual(got, tt.want) {
 				t.Errorf("MergeSort() = %v, want %v", got, tt.want)
 			}
 		})
