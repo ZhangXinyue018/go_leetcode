@@ -1,5 +1,25 @@
 package best_time_to_buy_and_sell_stock
 
+func maxProfitClearer(prices []int) int {
+	preRecord := 0
+	maxProfit := 0
+	for i := 1; i < len(prices); i++ {
+		preRecord = GetMax(preRecord-prices[i-1]+prices[i], 0)
+		if preRecord > maxProfit {
+			maxProfit = preRecord
+		}
+	}
+	return maxProfit
+}
+
+func GetMax(a int, b int) int {
+	if a > b {
+		return a
+	} else {
+		return b
+	}
+}
+
 func maxProfitBetter(prices []int) int {
 	if len(prices) < 2 {
 		return 0

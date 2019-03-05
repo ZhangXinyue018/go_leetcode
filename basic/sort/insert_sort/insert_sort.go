@@ -1,5 +1,7 @@
 package insert_sort
 
+// 插入排序可以归纳为增量法
+
 func InsertSort(nums []int) []int {
 	for i := 1; i < len(nums); i++ {
 		temp := nums[i]
