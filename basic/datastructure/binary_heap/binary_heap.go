@@ -1,4 +1,4 @@
-package datastructure
+package binary_heap
 
 // 最大堆
 

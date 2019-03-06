@@ -1,4 +1,4 @@
-package datastructure
+package binary_heap
 
 import (
 	"go_leetcode/basic/commons"
