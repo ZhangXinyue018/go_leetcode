@@ -13,13 +13,11 @@ func DetailedQuickSort(nums []int, leftIndex int, rightIndex int) {
 	leftPointer := leftIndex + 1
 	rightPointer := rightIndex
 	for leftPointer <= rightPointer {
-		for leftPointer < len(nums) && nums[leftPointer] <= temp {
+		for leftPointer <= rightIndex && nums[leftPointer] <= temp {
 			leftPointer++
-			continue
 		}
 		for rightPointer > leftIndex && nums[rightPointer] > temp {
 			rightPointer--
-			continue
 		}
 		if leftPointer < rightPointer {
 			nums[leftPointer], nums[rightPointer] = nums[rightPointer], nums[leftPointer]

@@ -1,6 +1,7 @@
 package valid_parentheses
 
 import (
+	"sort"
 	"testing"
 )
 
@@ -24,4 +25,9 @@ func TestIsValid(t *testing.T) {
 			}
 		})
 	}
+
+	temp := []uint8{}
+	sort.Slice(temp, func(i, j int) bool {
+		return i > j
+	})
 }
