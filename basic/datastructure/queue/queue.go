@@ -1,14 +1,14 @@
 package queue
 
 type Queue struct {
-	Items []int
+	Items []interface{}
 }
 
-func (queue *Queue) Enqueue(num int) {
+func (queue *Queue) Enqueue(num interface{}) {
 	queue.Items = append(queue.Items, num)
 }
 
-func (queue *Queue) Dequeue() int {
+func (queue *Queue) Dequeue() interface{} {
 	temp := queue.Items[0]
 	queue.Items = queue.Items[1:]
 	return temp
