@@ -44,6 +44,11 @@ func Test_searchMatrix2(t *testing.T) {
 			{10, 11, 16, 20},
 			{23, 30, 34, 50},
 		}, 13}, false},
+		{"test2", args{[][]int{
+			{1, 3, 5, 7},
+			{10, 11, 16, 20},
+			{23, 30, 34, 50},
+		}, 3}, true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

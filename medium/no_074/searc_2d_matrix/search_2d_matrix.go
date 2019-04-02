@@ -15,16 +15,16 @@ func searchMatrix2(matrix [][]int, target int) bool {
 	}
 	m := len(matrix)
 	n := len(matrix[0])
-	wg := &sync.WaitGroup{}
+	var wg sync.WaitGroup
 	for i := 0; i < m; i++ {
 		for j := 0; j < n; j++ {
 			wg.Add(1)
-			go func(matrix [][]int, i, j, target int, result *Result, wg *sync.WaitGroup) {
+			go func(matrix [][]int, i, j, target int, result *Result) {
 				defer wg.Done()
 				if matrix[i][j] == target {
 					(*result).Val = true
 				}
-			}(matrix, i, j, target, result, wg)
+			}(matrix, i, j, target, result)
 		}
 	}
 	wg.Wait()
