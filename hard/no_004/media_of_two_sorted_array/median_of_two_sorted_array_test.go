@@ -1,6 +1,9 @@
 package media_of_two_sorted_array
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_findMedianSortedArrays(t *testing.T) {
 	type args struct {
@@ -23,4 +26,12 @@ func Test_findMedianSortedArrays(t *testing.T) {
 			}
 		})
 	}
+}
+
+func TestNonSense(t *testing.T) {
+	nums := []int{0, 1, 2, 3, 4}
+	numsTemp := nums[:4]
+	fmt.Println(numsTemp)
+	fmt.Println(nums[4:])
+	fmt.Println(numsTemp[4:])
 }

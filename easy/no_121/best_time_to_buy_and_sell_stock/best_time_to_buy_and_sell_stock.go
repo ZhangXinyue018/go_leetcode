@@ -1,5 +1,21 @@
 package best_time_to_buy_and_sell_stock
 
+func maxProfitBest(prices []int) int {
+	if len(prices) == 0{
+		return 0
+	}
+	min := prices[0]
+	profit := 0
+	for _, price := range prices{
+		if price < min {
+			min = price
+		}else if price - min > profit{
+			profit = price - min
+		}
+	}
+	return profit
+}
+
 func maxProfitClearer(prices []int) int {
 	preRecord := 0
 	maxProfit := 0

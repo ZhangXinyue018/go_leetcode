@@ -42,3 +42,41 @@ func SearchK(m []int, n []int, k int) int {
 		}
 	}
 }
+
+
+func findMedianSortedArrays2(nums1 []int, nums2 []int) float64 {
+	m := len(nums1)
+	n := len(nums2)
+	if m < n {
+		return findMedianSortedArrays2(nums2, nums1)
+	}
+	if n == 0{
+		return float64(nums1[m/2] + nums1[(m-1)/2])/2.0
+	}
+	if m == 1 && n == 1{
+		return float64(nums1[0] + nums2[0])/2.0
+	}
+	if n == 1 || n == 2 {
+		nums1s := 0
+		nums1e := m
+		nums2s := 0
+		nums2e := n
+		if nums1[0] < nums2[0]{
+			nums1s = 1
+		}else{
+			nums2s = 1
+		}
+		if nums1[m-1] > nums2[n-1]{
+			nums1e = m-1
+		}else{
+			nums2e = n-1
+		}
+		return findMedianSortedArrays2(nums1[nums1s:nums1e], nums2[nums2s:nums2e])
+	}
+
+	if nums1[m/2] < nums2[n/2]{
+		return findMedianSortedArrays2(nums1[(n-1)/2:], nums2[:n-(n-1)/2])
+	}else{
+		return findMedianSortedArrays2(nums1[:m-(n-1)/2], nums2[(n-1)/2:])
+	}
+}
