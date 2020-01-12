@@ -50,7 +50,7 @@ func MyAtoi(str string) int {
 	}
 }
 
-func myAtoi(str string) int {
+func MyAtoi2(str string) int {
 	sign := 0
 	var result int64 = 0
 
@@ -89,5 +89,38 @@ func myAtoi(str string) int {
 		return int(result)
 	}
 
+}
+
+func MyAtoi3(str string) int {
+	if len(str) >0 && str[0] == ' '{
+		return MyAtoi3(str[1:])
+	}else if len(str) == 0{
+		return 0
+	}
+	sig := int64(1)
+	var result int64
+	for i :=0 ;i < len(str); i++{
+		if i == 0 {
+			if str[i] == '+'{
+				continue
+			}else if str[i] == '-'{
+				sig = int64(-1)
+				continue
+			}
+		}
+		if str[i] >= '0' && str[i] <= '9' && result <= math.MaxInt32{
+			result = 10 * result + int64(str[i] - '0')
+		}else{
+			break
+		}
+	}
+	result = sig * result
+	if result < math.MinInt32{
+		return math.MinInt32
+	}else if result > math.MaxInt32{
+		return math.MaxInt32
+	}else{
+		return int(result)
+	}
 }
 

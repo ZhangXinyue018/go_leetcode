@@ -45,3 +45,23 @@ func AppendString(root *TestTreeNode) []string {
 	}
 	return result
 }
+
+// The reason why it is best is because using pointer will save much space
+func generateParenthesisBest(n int) []string {
+	result := []string{}
+	generate(n, n, "", &result)
+	return result
+}
+
+func generate(left, right int, pre string, result *[]string) {
+	if left == 0 && right == 0{
+		*result = append(*result, pre)
+	}else if left == right{
+		generate(left-1, right, pre + "(", result)
+	}else if left == 0{
+		generate(left, right-1, pre + ")", result)
+	}else{
+		generate(left-1, right, pre + "(", result)
+		generate(left, right-1, pre + ")", result)
+	}
+}
